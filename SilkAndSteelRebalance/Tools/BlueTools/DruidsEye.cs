@@ -1,10 +1,9 @@
 ﻿using HarmonyLib;
-using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace SilkAndSteelRebalance.Tools {
+namespace SilkAndSteelRebalance.Tools.BlueTools {
     [HarmonyPatch]
     internal static class DruidsEye {
         private const int druidsEyeRestore = 2;
