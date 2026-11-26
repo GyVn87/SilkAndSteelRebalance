@@ -1,6 +1,7 @@
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using SilkAndSteelRebalance.Utils;
 using System.Reflection;
 
 namespace SilkAndSteelRebalance;
@@ -10,10 +11,8 @@ namespace SilkAndSteelRebalance;
 public partial class Plugin : BaseUnityPlugin {
     private Harmony? _harmony = null;
 
-    internal static ManualLogSource? ModLogger { get; private set; } = null;
-
     private void Awake() {
-        ModLogger = Logger;
+        Log.Init(Logger);
         _harmony = new Harmony(Id);
         _harmony.PatchAll(Assembly.GetExecutingAssembly());
 

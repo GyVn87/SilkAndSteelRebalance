@@ -19,7 +19,10 @@ namespace SilkAndSteelRebalance.Abilities {
         private static void HeroController_StartPostfix(HeroController __instance) {
             GameObject heroGameObject = __instance.gameObject;
             PlayMakerFSM? harpoonDashFsm = FsmUtil.GetFsm(heroGameObject, "Harpoon Dash");
-            if (harpoonDashFsm is null) return;
+            if (harpoonDashFsm == null) {
+                Utils.Log.Error("Can't found FSM: Harpoon Dash");
+                return;
+            }
 
             FsmUtil.RemoveFirstActionOfType<TakeSilk>(harpoonDashFsm, "Take Control");
 
@@ -29,6 +32,8 @@ namespace SilkAndSteelRebalance.Abilities {
                 intCompareAction.integer1 = 1;
                 intCompareAction.integer2 = 0;
             }
+            else
+                Utils.Log.Error("Can't found FsmAction: Can Do?");
         }
     }
 }
