@@ -34,7 +34,6 @@
 
   <ItemGroup>
     <Folder Remove="thunderstore/temp;thunderstore/dist" />
-    <None Include="README.md" Pack="True" PackagePath="README.md" />
     <None Include="thunderstore/icon.png" Pack="True" PackagePath="icon.png" />
   </ItemGroup>
 
@@ -44,7 +43,7 @@
       <Binaries Include="$(TargetDir)/$(TargetName).pdb" LocalDir="/" PackDir="/" />
     </ItemGroup>
     <PropertyGroup>
-      <ThunderstoreDir>$(ProjectDir)/thunderstore</ThunderstoreDir>
+      <ThunderstoreDir>$(SolutionDir)thunderstore</ThunderstoreDir>
     </PropertyGroup>
 
     <!-- Local install -->

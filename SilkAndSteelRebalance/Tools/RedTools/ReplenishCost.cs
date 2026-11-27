@@ -1,5 +1,4 @@
-﻿using GlobalSettings;
-using HarmonyLib;
+﻿using HarmonyLib;
 using UnityEngine;
 
 namespace SilkAndSteelRebalance.Tools.RedTools {
@@ -7,7 +6,7 @@ namespace SilkAndSteelRebalance.Tools.RedTools {
     internal static class ReplenishCost {
         private const float costMultiplier = 0.75f;
 
-        [HarmonyPatch(typeof(Gameplay), nameof(Gameplay.ToolReplenishCost), MethodType.Getter)]
+        [HarmonyPatch(typeof(GlobalSettings.Gameplay), nameof(GlobalSettings.Gameplay.ToolReplenishCost), MethodType.Getter)]
         [HarmonyPostfix]
         private static void Postfix(ref int __result) {
             __result = Mathf.RoundToInt((float)__result * costMultiplier);

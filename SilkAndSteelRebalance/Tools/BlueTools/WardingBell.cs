@@ -14,23 +14,14 @@ namespace SilkAndSteelRebalance.Tools.BlueTools {
         private static void HeroController_StartPostfix(HeroController __instance) {
             GameObject heroGameObject = __instance.gameObject;
             PlayMakerFSM? bindFsm = FsmUtil.GetFsm(heroGameObject, "Bind");
-            if (bindFsm is null) {
-                Utils.Log.Error("Not found FSM: Bind");
-                return;
-            }
+            if (bindFsm is null) { Utils.Log.Error("Not found FSM: Bind"); return; }
 
             FsmState removeSilkState = FsmUtil.MustGetState(bindFsm, "Remove Silk?");
             CheckIfToolEquipped? checkIfToolEquippedAction = FsmUtil.GetFirstActionOfType<CheckIfToolEquipped>(removeSilkState);
-            if (checkIfToolEquippedAction is null) {
-                Utils.Log.Error("Not found Action: CheckIfToolEquipped");
-                return;
-            }
+            if (checkIfToolEquippedAction is null) { Utils.Log.Error("Not found Action: CheckIfToolEquipped"); return; }
 
             FsmEvent? originalTrueEvent = checkIfToolEquippedAction.trueEvent;
-            if (originalTrueEvent is null) {
-                Utils.Log.Error("Not found event: CheckIfToolEquipped.trueEvent");
-                return;
-            }
+            if (originalTrueEvent is null) { Utils.Log.Error("Not found event: CheckIfToolEquipped.trueEvent"); return; }
             checkIfToolEquippedAction.trueEvent = null;
 
             FsmUtil.InsertLambdaMethodAfter(checkIfToolEquippedAction, (finish) => {
