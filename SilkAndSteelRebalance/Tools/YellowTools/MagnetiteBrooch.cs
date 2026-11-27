@@ -15,8 +15,6 @@ namespace SilkAndSteelRebalance.Tools.YellowTools {
         private static MinMaxFloat _magnetStartDelay;
         private static MinMaxFloat _magnetStartHeight;
         private static float _magnetStartMoveDuration;
-        private static AnimationCurve? _magnetStartMoveCurve;
-        private static MinMaxFloat _magnetAttractDelay;
 
         [HarmonyPatch(typeof(CurrencyObjectBase), nameof(CurrencyObjectBase.Awake))]
         [HarmonyPrefix]

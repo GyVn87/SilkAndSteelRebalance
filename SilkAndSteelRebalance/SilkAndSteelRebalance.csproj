@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <Folder Remove="thunderstore/temp;thunderstore/dist" />
+    <Folder Include="Tools\RedTools\" />
     <None Include="thunderstore/icon.png" Pack="True" PackagePath="icon.png" />
   </ItemGroup>
 
