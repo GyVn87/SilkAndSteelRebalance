@@ -1,11 +1,11 @@
 ﻿using GlobalEnums;
 using HarmonyLib;
 
-namespace ToolsRebalanced.Gameplay {
+namespace ToolsRebalanced.Shared {
     [HarmonyPatch]
     internal static class CurrencyNotBreakOnSpike {
         private const int disabledHazardBitMask = (int)HazardType.SPIKES;
-        
+
 
         [HarmonyPatch(typeof(BreakOnHazard), nameof(BreakOnHazard.Start))]
         [HarmonyPrefix]

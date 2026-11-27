@@ -18,8 +18,14 @@
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
-    <RepositoryUrl>https://github.com/GyVn87/SilkAndSteelRebalance</RepositoryUrl>
+    <RepositoryUrl>https://github.com/GyVn87/ToolsRebalanced</RepositoryUrl>
+    <AssemblyTitle>ToolsRebalanced</AssemblyTitle>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="thunderstore\**" />
+    <EmbeddedResource Remove="thunderstore\**" />
+    <None Remove="thunderstore\**" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.4.21" />
@@ -35,7 +41,6 @@
   <ItemGroup>
     <Folder Remove="thunderstore/temp;thunderstore/dist" />
     <Folder Include="Tools\RedTools\" />
-    <None Include="thunderstore/icon.png" Pack="True" PackagePath="icon.png" />
   </ItemGroup>
 
   <Target Name="CopyAndPackageMod" AfterTargets="PostBuildEvent">
