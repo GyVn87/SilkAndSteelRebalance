@@ -1,7 +1,7 @@
 ﻿using GlobalEnums;
 using HarmonyLib;
 
-namespace SilkAndSteelRebalance.Gameplay {
+namespace ToolsRebalanced.Gameplay {
     [HarmonyPatch]
     internal static class CurrencyNotBreakOnSpike {
         private const int disabledHazardBitMask = (int)HazardType.SPIKES;

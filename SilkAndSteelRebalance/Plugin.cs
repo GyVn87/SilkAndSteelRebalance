@@ -1,12 +1,12 @@
 using BepInEx;
 using HarmonyLib;
-using SilkAndSteelRebalance.Utils;
+using ToolsRebalanced.Utils;
 using System.Reflection;
 
-namespace SilkAndSteelRebalance;
+namespace ToolsRebalanced;
 
 // TODO - adjust the plugin guid as needed
-[BepInAutoPlugin(id: "io.github.gyvn87.silkandsteelrebalance")]
+[BepInAutoPlugin(id: "io.github.gyvn87.toolsrebalanced")]
 public partial class Plugin : BaseUnityPlugin {
     private Harmony? _harmony = null;
 

@@ -1,10 +1,8 @@
-﻿using GlobalSettings;
-using HarmonyLib;
-using System.Reflection;
+﻿using HarmonyLib;
 using TeamCherry.SharedUtils;
 using UnityEngine;
 
-namespace SilkAndSteelRebalance.Tools.YellowTools {
+namespace ToolsRebalanced.Tools.YellowTools {
     [HarmonyPatch]
     internal static class MagnetiteBrooch {
         private static bool _cachedConfig = false;

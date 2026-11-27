@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace SilkAndSteelRebalance.Utils {
+namespace ToolsRebalanced.Utils {
     internal static class Log {
         private static ManualLogSource? _logger;
 

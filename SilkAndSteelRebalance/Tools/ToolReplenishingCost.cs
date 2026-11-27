@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SilkAndSteelRebalance.Gameplay {
+namespace ToolsRebalanced.Tools {
     [HarmonyPatch]
     internal static class ToolReplenishingCost {
         private static readonly Dictionary<int, float> pouchLevelCostMultiplier = new() {

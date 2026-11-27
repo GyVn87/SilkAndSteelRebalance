@@ -4,7 +4,7 @@ using HutongGames.PlayMaker.Actions;
 using Silksong.FsmUtil;
 using UnityEngine;
 
-namespace SilkAndSteelRebalance.Tools.BlueTools {
+namespace ToolsRebalanced.Tools.BlueTools {
     [HarmonyPatch]
     internal static class WardingBell {
         private const int refundedSilk = 3;
